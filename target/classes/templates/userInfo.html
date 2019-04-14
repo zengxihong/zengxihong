@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息</title>
+</head>
+<body>
+<div th:replace="head :: header_common"></div>
+<hr/>
+<div th:replace="head :: #header_common_id"></div>
+<hr/>
+<table border="1">
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user, iterStat:${userInfos}">
+        <td th:text="${iterStat.count}" >编号</td>
+        <td th:text="${user.userName}">姓名</td>
+        <td th:text="${user.sex}">性别</td>
+        <td th:text="${user.age}">年龄</td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>
